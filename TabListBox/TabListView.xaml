@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="TabListBox.TabListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Height="387" Width="824">
+    
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ListDictionary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Canvas x:Name="grd" Height="381">
+        <Canvas.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox">
+                <GradientStop Color="#FF469669" Offset="0.004"/>
+                <GradientStop Offset="0.861" Color="White"/>
+            </LinearGradientBrush>
+        </Canvas.Background>
+        <ListBox ItemTemplate="{StaticResource EquityTemplate}"   IsSynchronizedWithCurrentItem="True" Canvas.Left="48" 
+         Canvas.Top="60" Height="147" x:Name="listBox1" Width="603"  ItemsSource="{Binding}" SelectionChanged="listBox1_SelectionChanged">
+            <ListBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF000000" Offset="0"/>
+                    <GradientStop Color="#FFFFFFFF" Offset="1"/>
+                </LinearGradientBrush>
+            </ListBox.Background>
+        </ListBox>
+        <ListBox Canvas.Left="48" Canvas.Top="211" Height="147" IsSynchronizedWithCurrentItem="True" ItemTemplate="{StaticResource EquityTemplate}" ItemsSource="{Binding}" Name="listBox2" Width="603" SelectionChanged="listBox2_SelectionChanged">
+            <ListBox.Background>
+                <LinearGradientBrush Opacity="0" EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF000000" Offset="0" />
+                    <GradientStop Color="#FFFFFFFF" Offset="1" />
+                </LinearGradientBrush>
+            </ListBox.Background>
+        </ListBox>
+        <Button Width="76.5" Height="23" Content="ПРИНЯТЬ" Canvas.Left="686.5" Canvas.Top="28" Click="Button_Click" />
+        <Label Width="307" Height="31" Content="Выберите степень симметрической группы" Canvas.Left="48" Canvas.Top="20" FontFamily="Times New Roman" FontSize="16">
+            <Label.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox">
+                    <GradientStop Color="#FF4CC776" Offset="0.146"/>
+                    <GradientStop Color="White" Offset="0.992"/>
+                </LinearGradientBrush>
+            </Label.Background>
+        </Label>
+        <ComboBox Name="combo" Width="45" Height="19" Canvas.Left="355" Canvas.Top="20" BorderBrush="#FF485057" SelectionChanged="combo_SelectionChanged">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF9EBDAB" Offset="0"/>
+                    <GradientStop Color="#FFD4DCD8" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+        </ComboBox>
+        <Button Width="76.5" Height="23" Content="ПРИНЯТЬ" Canvas.Left="686.5" Canvas.Top="184" Click="Button_Click_1" />
+        <Button Width="76" Height="23" Content="ПРИНЯТЬ" Canvas.Left="687" Canvas.Top="335" Click="Button_Click_2" />
+        <Label Width="153" Height="25.5" Content="Задающая диаграмма" Canvas.Left="-52" Canvas.Top="114" Background="#00D4C5C5" RenderTransformOrigin="0.5,0.5" FontSize="13.333">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Label Width="153" Height="25.5" Content="Таблица на диаграмме" Background="#00D4C5C5" FontSize="13.333" RenderTransformOrigin="0.5,0.5" Canvas.Left="-52" Canvas.Top="270">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Image Canvas.Left="666" Canvas.Top="68" Height="109" Name="image1" Stretch="Fill" Width="119" />
+        <Image Canvas.Left="666" Canvas.Top="222" Height="109" Name="image2" Stretch="Fill" Width="119" />
+    </Canvas>
+</UserControl>
